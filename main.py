@@ -14,7 +14,7 @@ def create_b_matrix(n):
     return b
 
 
-def gaussMethod(n, b, iterations):
+def gaussMethod(n, b):
     x = []
     for i in range(n):
         x.append(0.0)
@@ -53,7 +53,7 @@ if __name__ == '__main__':
         counter += 1
     b = create_b_matrix(n)
     print("Vector b is: \n", b)
-    x, counter = gaussMethod(n, b, 100000)
+    x, counter = gaussMethod(n, b)
     print(x)
 
     print("Iteration max: ", counter)
