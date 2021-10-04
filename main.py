@@ -39,7 +39,6 @@ def gaussMethod(n, b, iterations):
         if max_value_differ < 10 ** (-16):
             break
 
-
     return x
 
 
