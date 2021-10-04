@@ -34,12 +34,13 @@ def gaussMethod(n, b, iterations):
             x[i] = (b[i] - s) / 6.0
             if abs(x_i - x[i]) > max_value_differ:
                 max_value_differ = abs(x_i - x[i])
+
         print("MEX DIFFER: ", max_value_differ)
         counter += 1
         if max_value_differ < 10 ** (-16):
             break
 
-    return x
+    return x, counter
 
 
 if __name__ == '__main__':
@@ -52,5 +53,8 @@ if __name__ == '__main__':
         counter += 1
     b = create_b_matrix(n)
     print("Vector b is: \n", b)
-    x = gaussMethod(n, b, 100000)
+    x, counter = gaussMethod(n, b, 100000)
     print(x)
+
+    print("Iteration max: ", counter)
+    print(sum(x)==n and len(x)==n)
